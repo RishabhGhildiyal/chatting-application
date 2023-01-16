@@ -1,0 +1,86 @@
+<router-outlet></router-outlet>
+
+<body>
+  <main>
+    <header>
+      <div class="title">
+        <img src="../../../assets/chat.jpg" width="35px" />
+        <h1>Chat App</h1>
+      </div>
+      <button mat-raised-button color="accent" class="button-15" (click)="logout()">Logout</button>
+    </header>
+    <div class="container">
+      <div class="users-window">
+        <h2>Group Name :</h2>
+        <div class="users-head">
+          <div class="group-chat">
+            <form>
+              <input placeholder="Enter Group Name" type="text" class="group-name-input" #groupName maxlength="16"/>
+            </form>
+
+            <button mat-raised-button color="primary" class="room-btn" (click)="groupCreated(groupName.value)">
+              Create Group
+            </button>
+          </div>
+        </div>
+
+        <div class="users-list" *ngFor="let contact of activeUserArray" (click)="userSelected(contact)">
+          <div class="chat-list" >
+            <img src="../../../assets/avatar 2.jpeg" style="width: 30px; height: 30px" />
+            {{ contact.name }}
+            <h3>
+              <span class="status green"></span>
+              online
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="screen" *ngIf="!chatData">
+        <div class="image">
+          <img src="../../../assets/chat-benefits.png" alt="" style="width: 60%" height="30%" />
+        </div>
+        <br />
+      </div>
+
+      <div class="chat-window" *ngIf="chatData">
+        <form class="form-tag">
+          <div class="chats">
+            <div class="user-join" *ngIf="show">
+              <p>
+                <!-- <b>{{ usersData.chat_name }} </b>Joined the chat -->
+                {{ userName }}
+              </p>
+            </div>
+
+            <div *ngFor="let item of messageArray">
+              <div [ngClass]="
+                  item?.user == userData.userList[0].name ? 'right' : 'left'
+                ">
+                <div class="chat">
+                  <span class="msg-info-name msg-text">{{ item?.user }} :
+                  </span>
+                  <span class="msg-text">
+
+                    <app-read-more [content]="item?.message" [limit]="300" [completeWords]="true" *ngIf="item?.message.length>40 ">
+                    </app-read-more>
+                    <div *ngIf="item?.message.length<=40 " class="message-box">
+                      {{item?.message }}
+
+                    </div>
+
+
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="user-input">
+            <input (keyup)="$event.keyCode == 13 && sendMessage()" type="text" placeholder="Enter your message..."
+              [(ngModel)]="newMessage" name="input" />
+            <p (click)="roomId ? sendMessage() : sendMessageToRoom()">Send</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>

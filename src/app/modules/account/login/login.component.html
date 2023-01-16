@@ -1,0 +1,78 @@
+<body>
+  <html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      crossorigin="anonymous">
+
+    <body>
+
+      <section class="login">
+
+        <div class="login_box">
+          <div class="left">
+            <!-- <div class="top_link"> <img src="../../../assets/logo.png" alt=""></div> -->
+            <div class="contact">
+              <form [formGroup]="loginForm" class="form-tag">
+                <h3>SIGN IN</h3>
+                <div class="form">
+
+                  <div>
+                    <div class="email">
+
+                      <mat-form-field class="example-full-width" appearance="fill">
+
+                        <input matInput placeholder="Email" formControlName="email" required>
+                        <mat-error *ngIf="loginForm.controls?.email?.errors?.required">
+                          Email is required
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="name">
+
+                      <mat-form-field class="example-full-width" appearance="fill">
+
+                        <input matInput placeholder="Name" formControlName="name" required #username>
+                        <mat-error *ngIf="loginForm.controls?.password?.errors?.required">
+                         Name is Required
+                        </mat-error>
+                       
+                      </mat-form-field>
+                    </div>
+                    <div class="password">
+
+                      <mat-form-field class="example-full-width" appearance="fill">
+
+                        <input matInput placeholder="Password" formControlName="password" required #password>
+                        <mat-error *ngIf="loginForm.controls?.password?.errors?.required">
+                          Password is required
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+                </div>
+                <button class="submit" (click)="login(username,password)">LET'S GO</button>
+
+              </form>
+            </div>
+          </div>
+          <div class="right">
+            <div class="right-inductor"><img src="" alt=""></div>
+          </div>
+        </div>
+      </section>
+    </body>
+    </html>
+
+
+
+
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-80520768-2");
+  </script>
+</body>

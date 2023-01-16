@@ -1,0 +1,163 @@
+$color_1: #452A5A;
+$color_2: #fff;
+
+img {
+	width: 100%;
+}
+.form-tag{
+  width: 100%;
+
+}
+
+.login {
+	height: 1000px;
+	width: 100%;
+	background: radial-gradient(#653d84, #332042);
+	position: relative;
+}
+.login_box {
+	width: 1050px;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 1px 4px 22px -8px #0004;
+	display: flex;
+	overflow: hidden;
+	.left {
+		width: 41%;
+		height: 100%;
+		padding: 25px 25px;
+	}
+	.right {
+		width: 59%;
+		height: 100%;
+	}
+}
+.left {
+	.top_link {
+    img{
+
+      width: 70px;
+      height: 30px;
+    }
+	}
+	.contact {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-self: center;
+		height: 100%;
+		width: 100%;
+		margin: auto;
+    .form{
+      // margin-left: 35px;
+      // margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      .email{
+        width: 100%;
+        // margin: auto;
+
+      }
+      // .password{
+      //   margin: auto;
+      // }
+    }
+    .forgetPassword{
+      // padding: 0px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 28px;
+      // display: flex;
+      // justify-content: space-around;
+    }
+	}
+	h3 {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	background: linear-gradient(-45deg, #dcd7e0, #fff);
+}
+.submit {
+	border: none;
+	padding: 15px 70px;
+	border-radius: 8px;
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+	background: #583672;
+	color: $color_2;
+	font-weight: bold;
+	-webkit-box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+	-moz-box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+	box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+  width: 300px;
+}
+.signup {
+	border: none;
+	padding: 15px 70px;
+	border-radius: 8px;
+  width: 300px;
+	display: block;
+	margin: auto;
+	margin-top: 30px;
+	background: #583672;
+	color: $color_2;
+	font-weight: bold;
+	-webkit-box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+	-moz-box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+	box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+}
+.right {
+  width: 50px;
+  // height: 100px;
+	background:url(https://d1csarkz8obe9u.cloudfront.net/posterpreviews/chat-app-icon-logo-design-template-770ca6add87165646ba67d1a36dfee4e_screen.jpg?ts=1600190289);
+	color: $color_2;
+  font-weight: bold;
+	position: relative;
+
+	.right-inductor {
+		position: absolute;
+		width: 70px;
+		height: 7px;
+		background: #fff0;
+		left: 50%;
+		bottom: 70px;
+		transform: translate(-50%, 0%);
+	}
+}
+.right-text {
+	h2 {
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: 50px;
+		font-weight: 500;
+	}
+	h5 {
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: 19px;
+		font-weight: 400;
+	}
+}
+.top_link {
+	img {
+		width: 28px;
+		padding-right: 7px;
+		margin-top: -3px;
+	}
+}
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled, ::ng-deep .mat-form-field-outline {
+  opacity: 0;
+  }
+
+
+mat-form-field{
+  width: 300px;
+}
